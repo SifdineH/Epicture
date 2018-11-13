@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B7EC81F031F8EB3652826A1 /* Pods_Epicture_Epitech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C2B62E2BC0430BC301C3499 /* Pods_Epicture_Epitech.framework */; };
+		5C32F752219B281400F7ED70 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C32F751219B281400F7ED70 /* FavoritesViewController.swift */; };
+		5C7517442195B96800C41FD7 /* ScrollViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7517432195B96800C41FD7 /* ScrollViewManager.swift */; };
 		5CA994B52190680F00A4ED2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA994B42190680F00A4ED2F /* AppDelegate.swift */; };
 		5CA994B72190680F00A4ED2F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA994B62190680F00A4ED2F /* FirstViewController.swift */; };
 		5CA994B92190680F00A4ED2F /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA994B82190680F00A4ED2F /* SecondViewController.swift */; };
@@ -30,6 +33,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		131AB07441BD0EF70272DEE7 /* Pods-Epicture_Epitech.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Epicture_Epitech.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Epicture_Epitech/Pods-Epicture_Epitech.debug.xcconfig"; sourceTree = "<group>"; };
+		1C2B62E2BC0430BC301C3499 /* Pods_Epicture_Epitech.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Epicture_Epitech.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		425B3CE89A0659CF6E00641A /* Pods-Epicture_Epitech.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Epicture_Epitech.release.xcconfig"; path = "Pods/Target Support Files/Pods-Epicture_Epitech/Pods-Epicture_Epitech.release.xcconfig"; sourceTree = "<group>"; };
+		5C32F751219B281400F7ED70 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		5C7517422191C08000C41FD7 /* Epicture_Epitech-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Epicture_Epitech-Bridging-Header.h"; sourceTree = "<group>"; };
+		5C7517432195B96800C41FD7 /* ScrollViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewManager.swift; sourceTree = "<group>"; };
 		5CA994B12190680F00A4ED2F /* Epicture_Epitech.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Epicture_Epitech.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CA994B42190680F00A4ED2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CA994B62190680F00A4ED2F /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B7EC81F031F8EB3652826A1 /* Pods_Epicture_Epitech.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +80,8 @@
 				5CA994B32190680F00A4ED2F /* Epicture_Epitech */,
 				5CA994CA2190681000A4ED2F /* Epicture_EpitechTests */,
 				5CA994B22190680F00A4ED2F /* Products */,
+				65A24CEE21AB22C7A87F60AD /* Pods */,
+				846E37C087BE56244EF65512 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -88,13 +100,16 @@
 				5CA994B42190680F00A4ED2F /* AppDelegate.swift */,
 				5CA994B62190680F00A4ED2F /* FirstViewController.swift */,
 				5CA994B82190680F00A4ED2F /* SecondViewController.swift */,
+				5CA994E02190867500A4ED2F /* ThirdViewController.swift */,
 				5CA994DC219070C700A4ED2F /* TabBarViewController.swift */,
 				5CA994DA2190698000A4ED2F /* EntryViewController.swift */,
+				5C32F751219B281400F7ED70 /* FavoritesViewController.swift */,
 				5CA994DE2190847E00A4ED2F /* Assets.xcassets */,
 				5CA994BA2190680F00A4ED2F /* Main.storyboard */,
 				5CA994BF2190681000A4ED2F /* LaunchScreen.storyboard */,
 				5CA994C22190681000A4ED2F /* Info.plist */,
-				5CA994E02190867500A4ED2F /* ThirdViewController.swift */,
+				5C7517422191C08000C41FD7 /* Epicture_Epitech-Bridging-Header.h */,
+				5C7517432195B96800C41FD7 /* ScrollViewManager.swift */,
 			);
 			path = Epicture_Epitech;
 			sourceTree = "<group>";
@@ -108,6 +123,23 @@
 			path = Epicture_EpitechTests;
 			sourceTree = "<group>";
 		};
+		65A24CEE21AB22C7A87F60AD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				131AB07441BD0EF70272DEE7 /* Pods-Epicture_Epitech.debug.xcconfig */,
+				425B3CE89A0659CF6E00641A /* Pods-Epicture_Epitech.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		846E37C087BE56244EF65512 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1C2B62E2BC0430BC301C3499 /* Pods_Epicture_Epitech.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -115,9 +147,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5CA994D02190681000A4ED2F /* Build configuration list for PBXNativeTarget "Epicture_Epitech" */;
 			buildPhases = (
+				12958609254ADB1CBFA1CB0E /* [CP] Check Pods Manifest.lock */,
 				5CA994AD2190680F00A4ED2F /* Sources */,
 				5CA994AE2190680F00A4ED2F /* Frameworks */,
 				5CA994AF2190680F00A4ED2F /* Resources */,
+				D1E6ADE6E9D74BE08161E88E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -204,6 +238,49 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		12958609254ADB1CBFA1CB0E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Epicture_Epitech-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D1E6ADE6E9D74BE08161E88E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Epicture_Epitech/Pods-Epicture_Epitech-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/UIScrollView-InfiniteScroll/UIScrollView_InfiniteScroll.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIScrollView_InfiniteScroll.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Epicture_Epitech/Pods-Epicture_Epitech-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5CA994AD2190680F00A4ED2F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -211,9 +288,11 @@
 			files = (
 				5CA994B92190680F00A4ED2F /* SecondViewController.swift in Sources */,
 				5CA994DB2190698000A4ED2F /* EntryViewController.swift in Sources */,
+				5C32F752219B281400F7ED70 /* FavoritesViewController.swift in Sources */,
 				5CA994B52190680F00A4ED2F /* AppDelegate.swift in Sources */,
 				5CA994DD219070C700A4ED2F /* TabBarViewController.swift in Sources */,
 				5CA994E12190867500A4ED2F /* ThirdViewController.swift in Sources */,
+				5C7517442195B96800C41FD7 /* ScrollViewManager.swift in Sources */,
 				5CA994B72190680F00A4ED2F /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -374,6 +453,7 @@
 		};
 		5CA994D12190681000A4ED2F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 131AB07441BD0EF70272DEE7 /* Pods-Epicture_Epitech.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -385,6 +465,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.flo.Epicture-Epitech";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Epicture_Epitech/Epicture_Epitech-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -392,6 +473,7 @@
 		};
 		5CA994D22190681000A4ED2F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 425B3CE89A0659CF6E00641A /* Pods-Epicture_Epitech.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -403,6 +485,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.flo.Epicture-Epitech";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Epicture_Epitech/Epicture_Epitech-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
