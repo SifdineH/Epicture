@@ -14,7 +14,7 @@
         <scene sceneID="uIs-v9-viV">
             <objects>
                 <viewController id="Xt6-Gk-FlG" customClass="FavoritesViewController" customModule="Epicture_Epitech" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="TLP-KC-1PO">
+                    <view key="view" contentMode="scaleToFill" id="TLP-KC-1PO" customClass="ScrollViewManager" customModule="Epicture_Epitech" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -35,52 +35,12 @@
                     <view key="view" contentMode="scaleToFill" id="0Ib-hh-dF1" customClass="ScrollViewManager" customModule="Epicture_Epitech" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qUF-tO-kMw">
-                                <rect key="frame" x="83" y="93" width="276" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="38"/>
-                                <color key="textColor" red="0.0039215686274509803" green="0.10980392156862745" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="highlightedColor" red="0.50588235290000005" green="0.50588235290000005" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <size key="shadowOffset" width="3" height="-1"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ayu-dk-AhG">
-                                <rect key="frame" x="267" y="35" width="92" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.63921568630000003" green="0.0078431372550000003" blue="0.070588235289999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="12"/>
-                                <state key="normal" title="Déconnexion">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="titleShadowColor" red="0.63921568630000003" green="0.0078431372550000003" blue="0.070588235289999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="TMe-sd-vGu" kind="show" id="PTR-1d-xfq"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fbR-Uc-vag">
-                                <rect key="frame" x="3" y="81" width="72" height="72"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T2T-Ld-cHM">
-                                <rect key="frame" x="119" y="41" width="51" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="remove"/>
-                                <connections>
-                                    <action selector="remove:" destination="OX0-88-jl1" eventType="touchUpInside" id="b6p-Pc-vAR"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="xO5-55-yDp"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="User" landscapeImage="User" id="SJo-v6-qSP">
                         <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-8"/>
                     </tabBarItem>
-                    <connections>
-                        <outlet property="button" destination="ayu-dk-AhG" id="69G-5F-QR2"/>
-                        <outlet property="imageView" destination="fbR-Uc-vag" id="zUt-Di-TDt"/>
-                        <outlet property="labelName" destination="qUF-tO-kMw" id="9X5-eg-Or4"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Co0-Kr-swq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -131,7 +91,7 @@
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="Epicture_Epitech" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
+                    <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW" customClass="ScrollViewManager" customModule="Epicture_Epitech" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -147,10 +107,13 @@
                     <tabBarItem key="tabBarItem" title="" image="Search" landscapeImage="Search" id="cPa-gy-q4n">
                         <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-8"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="searchBar" destination="kHw-U0-4ah" id="JBg-Rs-ZVV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="710" y="531"/>
+            <point key="canvasLocation" x="709.60000000000002" y="530.28485757121439"/>
         </scene>
         <!--Entry View Controller-->
         <scene sceneID="1Xv-Pi-JSn">

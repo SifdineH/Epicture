@@ -47,6 +47,8 @@ class EntryViewController: UIViewController {
                     GlobalVariable.AccountUserName = ""
                     GlobalVariable.AccountUserName.append((successURL.absoluteString).substring(with: name))
                 }
+                GlobalVariable.NewFavorite = true
+                GlobalVariable.NewUpload = true
                 let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
                 let TabBarViewController = storyBoard.instantiateViewController(withIdentifier: "TabBar") as! TabBarViewController
                 self.present(TabBarViewController, animated:true, completion:nil)
@@ -59,6 +61,8 @@ class EntryViewController: UIViewController {
     struct GlobalVariable {
         static var AccessToken = String()
         static var AccountUserName = String()
+        static var NewFavorite = Bool()
+        static var NewUpload = Bool()
     }
     
 

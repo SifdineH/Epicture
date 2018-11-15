@@ -57,6 +57,7 @@ class FirstViewController: UIViewController, UINavigationControllerDelegate, UII
             switch result {
             case .success(let upload, _, _):
                 upload.responseJSON { response in
+                    EntryViewController.GlobalVariable.NewUpload = true
                     debugPrint(response)
                 }
             case .failure(let encodingError):

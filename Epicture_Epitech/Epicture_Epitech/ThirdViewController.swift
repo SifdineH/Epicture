@@ -12,48 +12,55 @@ import Foundation
 import SwiftyJSON
 
 class ThirdViewController: UIViewController {
-
-    @IBOutlet weak var button: UIButton!
-    @IBOutlet weak var labelName: UILabel!
-    @IBOutlet weak var imageView: UIImageView!
     
+    var arrayImages: [UIImageView] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        manageStyle()
+        viewWillAppear(true)
+    }
+    
+    func nameDisplay() {
+        let textViewName = UILabel(frame: CGRect(x: 0.0, y: 0.0, width: 250.0, height: 30.0))
+        textViewName.text = EntryViewController.GlobalVariable.AccountUserName
+        textViewName.center = self.view.center
+        textViewName.textAlignment = NSTextAlignment.justified
+        textViewName.backgroundColor = UIColor(white: 1, alpha: 0)
+        textViewName.center = CGPoint(x: 200, y: 130)
+        self.view.addSubview(textViewName)
+    }
+    
+    @IBAction func remove(_ sender: Any) {
+       
+//        if let foundView = self.view.viewWithTag(101) {
+//            foundView.removeFromSuperview()
+//        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         let AVATAR_URL:String = "https://api.imgur.com/3/account/\(EntryViewController.GlobalVariable.AccountUserName)/avatar"
         let IMAGES_URL:String = "https://api.imgur.com/3/account/\(EntryViewController.GlobalVariable.AccountUserName)/images"
         let headers: HTTPHeaders = [
             "Authorization": "Bearer \(EntryViewController.GlobalVariable.AccessToken)"
         ]
         
-        manageStyle()
-//        self.imageScroll.beginInfiniteScroll(true)
-
-        avatarDisplay(MY_URL: AVATAR_URL, headers: headers)
-        imagesDisplay(MY_URL: IMAGES_URL, headers: headers)
-        viewWillAppear(true)
-    }
-    
-    
-    @IBAction func remove(_ sender: Any) {
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-//        let AVATAR_URL:String = "https://api.imgur.com/3/account/\(EntryViewController.GlobalVariable.AccountUserName)/avatar"
-//        let IMAGES_URL:String = "https://api.imgur.com/3/account/\(EntryViewController.GlobalVariable.AccountUserName)/images"
-//        let headers: HTTPHeaders = [
-//            "Authorization": "Bearer \(EntryViewController.GlobalVariable.AccessToken)"
-//        ]
-//        avatarDisplay(MY_URL: AVATAR_URL, headers: headers)
-//        imagesDisplay(MY_URL: IMAGES_URL, headers: headers)
+        if (EntryViewController.GlobalVariable.NewUpload) {
+            view.subviews.forEach({ $0.removeFromSuperview() })
+            avatarDisplay(MY_URL: AVATAR_URL, headers: headers)
+            nameDisplay()
+            imagesDisplay(MY_URL: IMAGES_URL, headers: headers)
+            EntryViewController.GlobalVariable.NewUpload = false
+        }
     }
     
     func manageStyle() {
-        button.layer.cornerRadius = 15
-        button.layer.borderWidth = 1.5
-        button.layer.borderColor = UIColor(red: 244/255.0, green: 203/255.0, blue: 137/255.0, alpha: 0.0).cgColor
-        labelName.text = nil
-        labelName.text = EntryViewController.GlobalVariable.AccountUserName
+//        button.layer.cornerRadius = 15
+//        button.layer.borderWidth = 1.5
+//        button.layer.borderColor = UIColor(red: 244/255.0, green: 203/255.0, blue: 137/255.0, alpha: 0.0).cgColor
+//        labelName.text = nil
+//        labelName.text = EntryViewController.GlobalVariable.AccountUserName
     }
 
     func imagesDisplay(MY_URL: String, headers: HTTPHeaders) {
@@ -74,7 +81,7 @@ class ThirdViewController: UIViewController {
                                 let height = json["data"][count]["height"].int
                                 let width = json["data"][count]["width"].int
                                 let title = json["data"][count]["title"].string
-                                self.sendImageUrlToImageView(id: id, y: y, width: width ?? 750, height: height ?? 750, title: title ?? "Unknow Title...")
+                                self.sendImageUrlToImageView(id: id, y: y, width: width ?? 750, height: height ?? 750, title: title ?? "Unknow Title...", count: count)
                                 let size = self.view.frame.size.width
                                 y = Int(y) + Int(size) + 200
                             } else {
@@ -91,7 +98,7 @@ class ThirdViewController: UIViewController {
         }
     }
     
-    func sendImageUrlToImageView(id: String, y: Int, width: Int, height: Int, title: String) {
+    func sendImageUrlToImageView(id: String, y: Int, width: Int, height: Int, title: String, count: Int) {
         let URL_IMAGE = URL(string: id)
         let session = URLSession(configuration: .default)
         let imageSize = self.view.frame.size.width
@@ -105,7 +112,6 @@ class ThirdViewController: UIViewController {
                     if let imageData = data {
                         let calc:Double = Double(imageSize) + Double(y)
                         let textView = UILabel(frame: CGRect(x: 0.0, y: calc, width: 250.0, height: 100.0))
-//                        self.automaticallyAdjustsScrollViewInsets = false
                         textView.text = title
                         textView.center = self.view.center
                         textView.textAlignment = NSTextAlignment.justified
@@ -114,8 +120,10 @@ class ThirdViewController: UIViewController {
                         
                         let image = UIImage(data: imageData)
                         let imageView1 = UIImageView(image: image)
+                        imageView1.tag = count + 100
 //                        self.adjustImageSize(imageView1: imageView1, y: y, width: 200, height: 200)
                         imageView1.frame = CGRect(x: Double(0), y: Double(y), width: Double(imageSize), height: Double(imageSize))
+//                        self.arrayImages.append(imageView1)
                         self.view.addSubview(imageView1)
                         self.view.addSubview(textView)
 
@@ -129,11 +137,6 @@ class ThirdViewController: UIViewController {
         }
         getImageFromUrl.resume()
     }
-    
-//    func adjustImageSize(imageView1: UIImageView, y: Int, width: Int, height: Int) -> UIImageView {
-//        imageView1.frame = CGRect(x: 0, y: y, width: width, height: height)
-//        return imageView1
-//    }
     
     func avatarDisplay(MY_URL: String, headers: HTTPHeaders) {
         Alamofire.request(MY_URL, method: .get, headers: headers).responseJSON { response in
@@ -165,8 +168,11 @@ class ThirdViewController: UIViewController {
             } else {
                 if (response as? HTTPURLResponse) != nil {
                     if let imageData = data {
-                        let image = UIImage(data: imageData)
-                        self.imageView.image = image
+                        let imageAvatar = UIImage(data: imageData)
+                        let imageViewAvatar = UIImageView(image: imageAvatar)
+                        imageViewAvatar.frame = CGRect(x: 0, y: 100, width: 50, height: 50)
+                        //self.arrayImages.append(imageView1)
+                        self.view.addSubview(imageViewAvatar)
                     } else {
                         print("no image found")
                     }
