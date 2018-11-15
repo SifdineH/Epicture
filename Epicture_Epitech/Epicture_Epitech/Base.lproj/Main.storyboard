@@ -159,11 +159,11 @@
             </objects>
             <point key="canvasLocation" x="-866" y="532"/>
         </scene>
-        <!--View Controller-->
+        <!--Gallery View Controller-->
         <scene sceneID="WLP-uE-edd">
             <objects>
-                <viewController id="FqD-9M-ulJ" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="DGJ-9z-ha8">
+                <viewController id="FqD-9M-ulJ" customClass="GalleryViewController" customModule="Epicture_Epitech" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DGJ-9z-ha8" customClass="ScrollViewManager" customModule="Epicture_Epitech" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
