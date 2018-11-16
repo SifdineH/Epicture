@@ -27,6 +27,28 @@ class FirstViewController: UIViewController, UINavigationControllerDelegate, UII
         }
     }
     
+    func headerDisplay() {
+        let layer = CAShapeLayer()
+        layer.path = UIBezierPath(roundedRect: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 75), cornerRadius: 0).cgPath
+        layer.fillColor = UIColor(red:0.00, green:0.11, blue:0.15, alpha:1.0).cgColor
+        view.layer.addSublayer(layer)
+        
+        let textView = UILabel(frame: CGRect(x: 0.0, y: 0, width: 250.0, height: 100.0))
+        textView.text = "Epicture"
+        textView.center = self.view.center
+        textView.textAlignment = NSTextAlignment.justified
+        textView.backgroundColor = UIColor(white: 1, alpha: 0)
+        textView.center = CGPoint(x: self.view.frame.size.width / 2, y: 50)
+        textView.textAlignment = NSTextAlignment.center;
+        textView.textColor = UIColor(red:0.96, green:0.80, blue:0.54, alpha:1.0)
+        textView.font = UIFont(name:"Kefa", size: 26.0)
+        self.view.addSubview(textView)
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
         {
@@ -68,9 +90,8 @@ class FirstViewController: UIViewController, UINavigationControllerDelegate, UII
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        uploadButton.layer.cornerRadius = 15
-        uploadButton.layer.borderWidth = 1.5
-        uploadButton.layer.borderColor = UIColor(red: 244/255.0, green: 203/255.0, blue: 137/255.0, alpha: 0.0).cgColor
+        headerDisplay()
+        uploadButton.layer.cornerRadius = 30
     }
     
     override func viewWillAppear(_ animated: Bool) {

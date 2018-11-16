@@ -19,6 +19,9 @@ class FavoritesViewController: UIViewController {
         viewWillAppear(true)
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
     override func viewWillAppear(_ animated: Bool) {
 
@@ -30,12 +33,29 @@ class FavoritesViewController: UIViewController {
         if (EntryViewController.GlobalVariable.NewFavorite) {
             view.subviews.forEach({ $0.removeFromSuperview() })
     //        getRequest(url: FAVORITES_URL, headers: headers)
+            headerDisplay()
             imagesDisplay(MY_URL: FAVORITES_URL, headers: headers)
             EntryViewController.GlobalVariable.NewFavorite = false
         }
     }
     
-//
+    func headerDisplay() {
+        let layer = CAShapeLayer()
+        layer.path = UIBezierPath(roundedRect: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 75), cornerRadius: 0).cgPath
+        layer.fillColor = UIColor(red:0.00, green:0.11, blue:0.15, alpha:1.0).cgColor
+        view.layer.addSublayer(layer)
+        
+        let textView = UILabel(frame: CGRect(x: 0.0, y: 0, width: 250.0, height: 100.0))
+        textView.text = "Epicture"
+        textView.center = self.view.center
+        textView.textAlignment = NSTextAlignment.justified
+        textView.backgroundColor = UIColor(white: 1, alpha: 0)
+        textView.center = CGPoint(x: self.view.frame.size.width / 2, y: 50)
+        textView.textAlignment = NSTextAlignment.center;
+        textView.textColor = UIColor(red:0.96, green:0.80, blue:0.54, alpha:1.0)
+        textView.font = UIFont(name:"Kefa", size: 26.0)
+        self.view.addSubview(textView)
+    }
     
     func imagesDisplay(MY_URL: String, headers: HTTPHeaders) {
         var count:Int = 0
@@ -85,12 +105,21 @@ class FavoritesViewController: UIViewController {
                 if (response as? HTTPURLResponse) != nil {
                     if let imageData = data {
                         let calc:Double = Double(imageSize) + Double(y)
+                        
+                        let layerImage = CAShapeLayer()
+                        layerImage.path = UIBezierPath(roundedRect: CGRect(x: 0.00, y: calc, width: Double(imageSize), height: Double(100)), cornerRadius: 1.00).cgPath
+                        layerImage.fillColor = UIColor(red:0.00, green:0.11, blue:0.15, alpha:1.0).cgColor
+                        self.view.layer.addSublayer(layerImage)
+                        
                         let textView = UILabel(frame: CGRect(x: 0.0, y: calc, width: 250.0, height: 100.0))
                         textView.text = title
                         textView.center = self.view.center
                         textView.textAlignment = NSTextAlignment.justified
                         textView.backgroundColor = UIColor(white: 1, alpha: 0)
-                        textView.center = CGPoint(x: 200, y: calc + 20)
+                        textView.center = CGPoint(x: Double(imageSize / 2), y: calc + 45)
+                        textView.textAlignment = NSTextAlignment.center;
+                        textView.textColor = UIColor(red:1, green:1, blue:1, alpha:1.0)
+                        textView.font = UIFont(name:"Kefa", size: 16.0)
                         
                         let image = UIImage(data: imageData)
                         let imageView1 = UIImageView(image: image)

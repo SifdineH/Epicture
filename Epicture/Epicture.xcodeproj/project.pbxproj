@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		371D4D8FACFB0F7973DE64CC /* Pods_Epicture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93A833AA846A24AF6B9F1568 /* Pods_Epicture.framework */; };
 		5C43ACDC218858A000CEE5CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C43ACDB218858A000CEE5CC /* AppDelegate.swift */; };
 		5C43ACDE218858A000CEE5CC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C43ACDD218858A000CEE5CC /* ViewController.swift */; };
 		5C43ACE1218858A000CEE5CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C43ACDF218858A000CEE5CC /* Main.storyboard */; };
 		5C43ACE3218858A100CEE5CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C43ACE2218858A100CEE5CC /* Assets.xcassets */; };
 		5C43ACE6218858A100CEE5CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C43ACE4218858A100CEE5CC /* LaunchScreen.storyboard */; };
 		5C43ACF1218858A100CEE5CC /* EpictureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C43ACF0218858A100CEE5CC /* EpictureTests.swift */; };
+		5C8C17BC218C679F007ABABB /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8C17BB218C679F007ABABB /* TabBarViewController.swift */; };
+		5C8C17C2218CFB58007ABABB /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8C17C1218CFB58007ABABB /* AccountViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,11 @@
 		5C43ACEC218858A100CEE5CC /* EpictureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EpictureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C43ACF0218858A100CEE5CC /* EpictureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpictureTests.swift; sourceTree = "<group>"; };
 		5C43ACF2218858A100CEE5CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C8C17BB218C679F007ABABB /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		5C8C17C1218CFB58007ABABB /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		9336BB9CF763F7AEA48CB4BF /* Pods-Epicture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Epicture.release.xcconfig"; path = "Pods/Target Support Files/Pods-Epicture/Pods-Epicture.release.xcconfig"; sourceTree = "<group>"; };
+		93A833AA846A24AF6B9F1568 /* Pods_Epicture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Epicture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		96BCDE5F19D2ED2ADCB052DB /* Pods-Epicture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Epicture.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Epicture/Pods-Epicture.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				371D4D8FACFB0F7973DE64CC /* Pods_Epicture.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,12 +65,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		30BC637DFF6C2FF2B56DBA6B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				93A833AA846A24AF6B9F1568 /* Pods_Epicture.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3C51208FC3A4B7722595D09B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				96BCDE5F19D2ED2ADCB052DB /* Pods-Epicture.debug.xcconfig */,
+				9336BB9CF763F7AEA48CB4BF /* Pods-Epicture.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		5C43ACCF218858A000CEE5CC = {
 			isa = PBXGroup;
 			children = (
 				5C43ACDA218858A000CEE5CC /* Epicture */,
 				5C43ACEF218858A100CEE5CC /* EpictureTests */,
 				5C43ACD9218858A000CEE5CC /* Products */,
+				3C51208FC3A4B7722595D09B /* Pods */,
+				30BC637DFF6C2FF2B56DBA6B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +107,8 @@
 			children = (
 				5C43ACDB218858A000CEE5CC /* AppDelegate.swift */,
 				5C43ACDD218858A000CEE5CC /* ViewController.swift */,
+				5C8C17BB218C679F007ABABB /* TabBarViewController.swift */,
+				5C8C17C1218CFB58007ABABB /* AccountViewController.swift */,
 				5C43ACDF218858A000CEE5CC /* Main.storyboard */,
 				5C43ACE2218858A100CEE5CC /* Assets.xcassets */,
 				5C43ACE4218858A100CEE5CC /* LaunchScreen.storyboard */,
@@ -103,9 +133,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5C43ACF5218858A100CEE5CC /* Build configuration list for PBXNativeTarget "Epicture" */;
 			buildPhases = (
+				451704B7D2C11079226C2A70 /* [CP] Check Pods Manifest.lock */,
 				5C43ACD4218858A000CEE5CC /* Sources */,
 				5C43ACD5218858A000CEE5CC /* Frameworks */,
 				5C43ACD6218858A000CEE5CC /* Resources */,
+				057E8775070B4FC90E450176 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -192,12 +224,53 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		057E8775070B4FC90E450176 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Epicture/Pods-Epicture-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Epicture/Pods-Epicture-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		451704B7D2C11079226C2A70 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Epicture-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5C43ACD4218858A000CEE5CC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				5C43ACDE218858A000CEE5CC /* ViewController.swift in Sources */,
+				5C8C17BC218C679F007ABABB /* TabBarViewController.swift in Sources */,
+				5C8C17C2218CFB58007ABABB /* AccountViewController.swift in Sources */,
 				5C43ACDC218858A000CEE5CC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -356,6 +429,7 @@
 		};
 		5C43ACF6218858A100CEE5CC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 96BCDE5F19D2ED2ADCB052DB /* Pods-Epicture.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -374,6 +448,7 @@
 		};
 		5C43ACF7218858A100CEE5CC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9336BB9CF763F7AEA48CB4BF /* Pods-Epicture.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
