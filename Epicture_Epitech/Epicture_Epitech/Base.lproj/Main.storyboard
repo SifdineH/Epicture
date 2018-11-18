@@ -26,7 +26,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fjk-jj-Ze5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="710" y="1271"/>
+            <point key="canvasLocation" x="1648.8" y="1270.6146926536733"/>
         </scene>
         <!--Third View Controller-->
         <scene sceneID="0XT-5t-8gP">
@@ -44,7 +44,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Co0-Kr-swq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-119.2" y="1270.6146926536733"/>
+            <point key="canvasLocation" x="820" y="1270.6146926536733"/>
         </scene>
         <!--First View Controller-->
         <scene sceneID="hNz-n2-bh7">
@@ -130,7 +130,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="709.60000000000002" y="530.28485757121439"/>
+            <point key="canvasLocation" x="1648.8" y="530.28485757121439"/>
         </scene>
         <!--Entry View Controller-->
         <scene sceneID="1Xv-Pi-JSn">
@@ -175,19 +175,124 @@
                     </view>
                     <connections>
                         <outlet property="button" destination="EC3-1w-Gch" id="FE8-lP-KpC"/>
+                        <outlet property="textField" destination="7nY-mT-hJF" id="AOr-bR-kEh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6rR-zR-kxJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-866.39999999999998" y="530.28485757121439"/>
+            <point key="canvasLocation" x="72.799999999999997" y="530.28485757121439"/>
+        </scene>
+        <!--Filers Control View Controller-->
+        <scene sceneID="zLx-hN-Fye">
+            <objects>
+                <viewController id="JGQ-Sn-n0A" customClass="FilersControlViewController" customModule="Epicture_Epitech" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PCs-km-Wbw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xCb-dt-aGz">
+                                <rect key="frame" x="18" y="76" width="339" height="148"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" red="0.63921568630000003" green="0.0078431372550000003" blue="0.070588235289999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="JGQ-Sn-n0A" id="Caf-aU-PO5"/>
+                                    <outlet property="delegate" destination="JGQ-Sn-n0A" id="Q9a-2t-uTW"/>
+                                </connections>
+                            </pickerView>
+                            <pickerView tag="2" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="41X-8l-UwL">
+                                <rect key="frame" x="19" y="236" width="340" height="148"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="JGQ-Sn-n0A" id="MeE-8c-PK6"/>
+                                    <outlet property="delegate" destination="JGQ-Sn-n0A" id="iWh-9V-TCo"/>
+                                </connections>
+                            </pickerView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="SECTION" textAlignment="center" minimumFontSize="32" translatesAutoresizingMaskIntoConstraints="NO" id="HjI-qr-OIb">
+                                <rect key="frame" x="18" y="56" width="339" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" red="0.95686274510000002" green="0.79607843140000001" blue="0.53725490200000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="31"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="SORT" textAlignment="center" minimumFontSize="32" translatesAutoresizingMaskIntoConstraints="NO" id="imi-86-Rpy">
+                                <rect key="frame" x="18" y="220" width="339" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" red="0.95686274510000002" green="0.79607843140000001" blue="0.53725490200000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="31"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="WINDOW" textAlignment="center" minimumFontSize="32" translatesAutoresizingMaskIntoConstraints="NO" id="RRU-LO-YnQ">
+                                <rect key="frame" x="19" y="381" width="339" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" red="0.95686274510000002" green="0.79607843140000001" blue="0.53725490200000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="31"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <pickerView tag="3" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3YG-B8-KGO">
+                                <rect key="frame" x="19" y="400" width="339" height="148"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="JGQ-Sn-n0A" id="zQN-J9-l6M"/>
+                                    <outlet property="delegate" destination="JGQ-Sn-n0A" id="Um9-Mi-cDs"/>
+                                </connections>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jM4-HX-ooa">
+                                <rect key="frame" x="81" y="589" width="216" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.41960784309999999" green="0.047058823530000002" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="17"/>
+                                <state key="normal" title="Save changes">
+                                    <color key="titleColor" red="0.95686274510000002" green="0.79607843140000001" blue="0.53725490200000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.66274509800000003" green="0.027450980390000001" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="SaveSectionChanges:" destination="JGQ-Sn-n0A" eventType="touchUpInside" id="GR6-6t-b87"/>
+                                    <action selector="connexionClick:" destination="TMe-sd-vGu" eventType="touchUpInside" id="gfi-p0-mPa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cSW-Ao-qps">
+                                <rect key="frame" x="16" y="43" width="36" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Out"/>
+                                <connections>
+                                    <segue destination="49e-Tb-3d3" kind="show" id="v2x-fP-eWw"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0039215686269999999" green="0.10980392160000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.66274509800000003" green="0.027450980390000001" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="330-kn-a9r"/>
+                    </view>
+                    <connections>
+                        <outlet property="OUT" destination="cSW-Ao-qps" id="1v3-Ui-P4R"/>
+                        <outlet property="saveChanges" destination="jM4-HX-ooa" id="d29-h4-scn"/>
+                        <outlet property="sectionFilters" destination="xCb-dt-aGz" id="pV0-bz-CJz"/>
+                        <outlet property="sectionText" destination="HjI-qr-OIb" id="TqW-BQ-oh1"/>
+                        <outlet property="sortFilters" destination="41X-8l-UwL" id="Xvc-ag-dj0"/>
+                        <outlet property="sortText" destination="imi-86-Rpy" id="ipc-EM-TOo"/>
+                        <outlet property="windowText" destination="RRU-LO-YnQ" id="4Le-yy-xF4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z6i-Jh-NhH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-119.2" y="-872.11394302848578"/>
         </scene>
         <!--Gallery View Controller-->
         <scene sceneID="WLP-uE-edd">
             <objects>
-                <viewController id="FqD-9M-ulJ" customClass="GalleryViewController" customModule="Epicture_Epitech" customModuleProvider="target" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nmD-WL-sAa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="Gallery" id="FqD-9M-ulJ" customClass="GalleryViewController" customModule="Epicture_Epitech" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DGJ-9z-ha8" customClass="ScrollViewManager" customModule="Epicture_Epitech" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WAi-rz-D2W">
+                                <rect key="frame" x="303" y="80" width="56" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="filters"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Vrk-55-ZMg"/>
                     </view>
@@ -195,14 +300,12 @@
                         <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-8"/>
                     </tabBarItem>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nmD-WL-sAa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-119" y="-197"/>
+            <point key="canvasLocation" x="-119.2" y="-197.45127436281859"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
                 <tabBarController storyboardIdentifier="TabBar" id="49e-Tb-3d3" customClass="TabBarViewController" customModule="Epicture_Epitech" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
@@ -227,15 +330,18 @@
                         <segue destination="OX0-88-jl1" kind="relationship" relationship="viewControllers" id="pQL-mK-WZN"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-119" y="532"/>
+            <point key="canvasLocation" x="820" y="531.18440779610194"/>
         </scene>
     </scenes>
     <resources>
         <image name="Add" width="40" height="40"/>
         <image name="Favorite" width="40" height="40"/>
+        <image name="Out" width="409.60000610351562" height="409.60000610351562"/>
         <image name="Search" width="50" height="50"/>
         <image name="User" width="40" height="40"/>
+        <image name="filters" width="56.25" height="56.25"/>
         <image name="home" width="40" height="40"/>
         <image name="load_image" width="409.60000610351562" height="409.60000610351562"/>
         <image name="upload_button" width="409.60000610351562" height="409.60000610351562"/>

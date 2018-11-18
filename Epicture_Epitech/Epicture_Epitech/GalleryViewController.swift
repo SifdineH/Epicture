@@ -13,15 +13,20 @@ import SwiftyJSON
 
 class GalleryViewController: UIViewController {
 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let GALLERY_URL:String = "https://api.imgur.com/3/gallery/hot/viral/0/week?showViral=true&mature=true&album_previews=true"
+        let GALLERY_URL:String = "https://api.imgur.com/3/gallery/\(EntryViewController.GlobalVariable.FilerSection)/\(EntryViewController.GlobalVariable.FilerSort)/1/\(EntryViewController.GlobalVariable.FilerWindow)?showViral=true&mature=true&album_previews=true"
         let headers: HTTPHeaders = [
             "Authorization": "Bearer \(EntryViewController.GlobalVariable.AccessToken)"
         ]
         headerDisplay()
         imagesDisplay(MY_URL: GALLERY_URL, headers: headers)
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         
     }
     

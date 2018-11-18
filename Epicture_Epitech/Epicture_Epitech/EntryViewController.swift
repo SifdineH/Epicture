@@ -12,11 +12,13 @@ import AuthenticationServices
 class EntryViewController: UIViewController {
 
     @IBOutlet weak var button: UIButton!
+    @IBOutlet weak var textField: UITextField!
     var webAuthSession: ASWebAuthenticationSession?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        textField.isUserInteractionEnabled = false
         button.layer.cornerRadius = 25
         button.layer.borderWidth = 1.5
         button.layer.borderColor = UIColor(red: 244/255.0, green: 203/255.0, blue: 137/255.0, alpha: 1.0).cgColor
@@ -49,6 +51,9 @@ class EntryViewController: UIViewController {
                 }
                 GlobalVariable.NewFavorite = true
                 GlobalVariable.NewUpload = true
+                GlobalVariable.FilerWindow = "week"
+                GlobalVariable.FilerSort = "viral"
+                GlobalVariable.FilerSection = "hot"
                 let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
                 let TabBarViewController = storyBoard.instantiateViewController(withIdentifier: "TabBar") as! TabBarViewController
                 self.present(TabBarViewController, animated:true, completion:nil)
@@ -63,6 +68,9 @@ class EntryViewController: UIViewController {
         static var AccountUserName = String()
         static var NewFavorite = Bool()
         static var NewUpload = Bool()
+        static var FilerSection = String()
+        static var FilerSort = String()
+        static var FilerWindow = String()
     }
     
 

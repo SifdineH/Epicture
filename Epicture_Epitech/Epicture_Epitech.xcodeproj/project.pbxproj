@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5B7EC81F031F8EB3652826A1 /* Pods_Epicture_Epitech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C2B62E2BC0430BC301C3499 /* Pods_Epicture_Epitech.framework */; };
 		5C0AB5E4219D2D7E005F3793 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0AB5E3219D2D7E005F3793 /* GalleryViewController.swift */; };
+		5C2CB9EE21A0747E00A1B11C /* FilersControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2CB9ED21A0747E00A1B11C /* FilersControlViewController.swift */; };
 		5C32F752219B281400F7ED70 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C32F751219B281400F7ED70 /* FavoritesViewController.swift */; };
 		5C7517442195B96800C41FD7 /* ScrollViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7517432195B96800C41FD7 /* ScrollViewManager.swift */; };
 		5CA994B52190680F00A4ED2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA994B42190680F00A4ED2F /* AppDelegate.swift */; };
@@ -38,6 +39,7 @@
 		1C2B62E2BC0430BC301C3499 /* Pods_Epicture_Epitech.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Epicture_Epitech.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		425B3CE89A0659CF6E00641A /* Pods-Epicture_Epitech.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Epicture_Epitech.release.xcconfig"; path = "Pods/Target Support Files/Pods-Epicture_Epitech/Pods-Epicture_Epitech.release.xcconfig"; sourceTree = "<group>"; };
 		5C0AB5E3219D2D7E005F3793 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
+		5C2CB9ED21A0747E00A1B11C /* FilersControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilersControlViewController.swift; sourceTree = "<group>"; };
 		5C32F751219B281400F7ED70 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		5C7517422191C08000C41FD7 /* Epicture_Epitech-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Epicture_Epitech-Bridging-Header.h"; sourceTree = "<group>"; };
 		5C7517432195B96800C41FD7 /* ScrollViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewManager.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				5C7517422191C08000C41FD7 /* Epicture_Epitech-Bridging-Header.h */,
 				5C7517432195B96800C41FD7 /* ScrollViewManager.swift */,
 				5C0AB5E3219D2D7E005F3793 /* GalleryViewController.swift */,
+				5C2CB9ED21A0747E00A1B11C /* FilersControlViewController.swift */,
 			);
 			path = Epicture_Epitech;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				5C0AB5E4219D2D7E005F3793 /* GalleryViewController.swift in Sources */,
 				5C7517442195B96800C41FD7 /* ScrollViewManager.swift in Sources */,
 				5CA994B72190680F00A4ED2F /* FirstViewController.swift in Sources */,
+				5C2CB9EE21A0747E00A1B11C /* FilersControlViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

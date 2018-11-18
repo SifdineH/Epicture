@@ -14,6 +14,8 @@ import SwiftyJSON
 class SecondViewController: UIViewController, UISearchBarDelegate {
    
     @IBOutlet weak var searchBar: UISearchBar!
+    var refHash: [Int: String] = [:]
+    var refFav: [Int: Bool] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,15 +84,16 @@ class SecondViewController: UIViewController, UISearchBarDelegate {
                 if let dataFromString = utf8Text.data(using: .utf8, allowLossyConversion: false) {
                     do {
                         let json = try JSON(data: dataFromString)
-                        print("UNO")
+                        print("UNOOOOO")
                         print(json)
-                        print("DOS")
+                        print("DOOOOOS")
                         while (statut) {
                             if let id = json["data"][count]["images"][0]["link"].string {
 //                                let height = json["data"][count]["height"].int
 //                                let width = json["data"][count]["width"].int
                                 let title = json["data"][count]["title"].string
-                                self.sendImageUrlToImageView(id: id, y: y, width: 750, height: 750, title: title ?? "Unknow Title...", count: count)
+                                let hash = json["data"][count]["images"][0]["id"].string
+                                self.sendImageUrlToImageView(id: id, y: y, width: 750, height: 750, title: title ?? "Unknow Title...", count: count, hash: hash ?? "vmlDWGV")
                                 let size = self.view.frame.size.width
                                 y = Int(y) + Int(size) + 200
                             } else {
@@ -107,7 +110,7 @@ class SecondViewController: UIViewController, UISearchBarDelegate {
         }
     }
     
-    func sendImageUrlToImageView(id: String, y: Int, width: Int, height: Int, title: String, count: Int) {
+    func sendImageUrlToImageView(id: String, y: Int, width: Int, height: Int, title: String, count: Int, hash: String) {
         let URL_IMAGE = URL(string: id)
         let session = URLSession(configuration: .default)
         let imageSize = self.view.frame.size.width
@@ -138,11 +141,22 @@ class SecondViewController: UIViewController, UISearchBarDelegate {
                         let image = UIImage(data: imageData)
                         let imageView1 = UIImageView(image: image)
                         imageView1.tag = count + 100
-                        //                        self.adjustImageSize(imageView1: imageView1, y: y, width: 200, height: 200)
                         imageView1.frame = CGRect(x: Double(0), y: Double(y), width: Double(imageSize), height: Double(imageSize))
-                        //                        self.arrayImages.append(imageView1)
+                        let back = UIImage(named: "star") as UIImage?
+                        
+                        let button = UIButton(frame: CGRect(x: Double(300), y: Double(calc + 30), width: 30, height: 30))
+                        button.setImage(back, for: .normal)
+                        
+                        button.addTarget(self, action: #selector(self.favor), for: .touchUpInside)
+                        button.tag = count + 1000
+                        self.view.bringSubviewToFront(button)
+                        self.view.sendSubviewToBack(imageView1)
+                        
                         self.view.addSubview(imageView1)
                         self.view.addSubview(textView)
+                        self.view.addSubview(button)
+                        self.refHash[button.tag] = hash
+                        self.refFav[button.tag] = false
                         
                     } else {
                         print("no image found")
@@ -153,6 +167,45 @@ class SecondViewController: UIViewController, UISearchBarDelegate {
             }
         }
         getImageFromUrl.resume()
+    }
+    
+    @IBAction func favor(sender: UIButton) {
+        let back: UIImage
+        if (self.refFav[sender.tag] == false) {
+            back = (UIImage(named: "fullStar") as UIImage?)!
+            self.refFav[sender.tag] = true
+        } else {
+            back = (UIImage(named: "star") as UIImage?)!
+            self.refFav[sender.tag] = false
+        }
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer \(EntryViewController.GlobalVariable.AccessToken)"
+        ]
+        print(self.refHash[sender.tag] ?? "Error")
+        favoriteImage(headers: headers, hash: self.refHash[sender.tag] ?? "vmlDWGV")
+        sender.setImage(back, for: .normal)
+        EntryViewController.GlobalVariable.NewFavorite = true
+    }
+    
+    func favoriteImage(headers: HTTPHeaders, hash: String) {
+        let URL:String = "https://api.imgur.com/3/image/\(hash)/favorite"
+        //        Alamofire.request(URL, method: .get, headers: headers).responseJSON {_ in
+        //        }
+        Alamofire.request(URL, method: .post, headers: headers).responseJSON { response in
+            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
+                if let dataFromString = utf8Text.data(using: .utf8, allowLossyConversion: false) {
+                    do {
+                        let json = try JSON(data: dataFromString)
+                        print("Fmo")
+                        print(json)
+                        print("Flo")
+                    } catch {
+                        print(error)
+                        return
+                    }
+                }
+            }
+        }
     }
     
 }

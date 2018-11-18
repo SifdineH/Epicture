@@ -16,6 +16,14 @@ class FirstViewController: UIViewController, UINavigationControllerDelegate, UII
     @IBOutlet weak var uploadButton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        headerDisplay()
+        uploadButton.layer.cornerRadius = 30
+    }
+    
+    
     @IBAction func btnClicked(_ sender: Any) {
         let image = UIImagePickerController()
         image.delegate = self
@@ -88,11 +96,6 @@ class FirstViewController: UIViewController, UINavigationControllerDelegate, UII
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        headerDisplay()
-        uploadButton.layer.cornerRadius = 30
-    }
     
     override func viewWillAppear(_ animated: Bool) {
     }

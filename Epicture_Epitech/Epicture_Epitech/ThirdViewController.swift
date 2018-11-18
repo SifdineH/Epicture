@@ -14,11 +14,11 @@ import SwiftyJSON
 class ThirdViewController: UIViewController {
     
     var arrayImages: [UIImageView] = []
+    var refHash: [Int: String] = [:]
+    var refFav: [Int: Bool] = [:]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        manageStyle()
         viewWillAppear(true)
     }
     
@@ -40,12 +40,7 @@ class ThirdViewController: UIViewController {
         self.view.addSubview(textViewName)
     }
     
-    @IBAction func remove(_ sender: Any) {
-       
-//        if let foundView = self.view.viewWithTag(101) {
-//            foundView.removeFromSuperview()
-//        }
-    }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         let AVATAR_URL:String = "https://api.imgur.com/3/account/\(EntryViewController.GlobalVariable.AccountUserName)/avatar"
@@ -70,7 +65,6 @@ class ThirdViewController: UIViewController {
 
         let imageViewProfil = UIImageView(image: imageProfil)
         
-        //                        self.adjustImageSize(imageView1: imageView1, y: y, width: 200, height: 200)
         imageViewProfil.frame = CGRect(x: 0, y: 75, width: self.view.frame.size.width, height: 150)
         self.view.addSubview(imageViewProfil)
     }
@@ -92,14 +86,6 @@ class ThirdViewController: UIViewController {
         textView.font = UIFont(name:"Kefa", size: 26.0)
         self.view.addSubview(textView)
     }
-    
-    func manageStyle() {
-//        button.layer.cornerRadius = 15
-//        button.layer.borderWidth = 1.5
-//        button.layer.borderColor = UIColor(red: 244/255.0, green: 203/255.0, blue: 137/255.0, alpha: 0.0).cgColor
-//        labelName.text = nil
-//        labelName.text = EntryViewController.GlobalVariable.AccountUserName
-    }
 
     func imagesDisplay(MY_URL: String, headers: HTTPHeaders) {
         var count:Int = 0
@@ -119,7 +105,8 @@ class ThirdViewController: UIViewController {
                                 let height = json["data"][count]["height"].int
                                 let width = json["data"][count]["width"].int
                                 let title = json["data"][count]["title"].string
-                                self.sendImageUrlToImageView(id: id, y: y, width: width ?? 750, height: height ?? 750, title: title ?? "Unknow Title...", count: count)
+                                let hash = json["data"][count]["id"].string
+                                self.sendImageUrlToImageView(id: id, y: y, width: width ?? 750, height: height ?? 750, title: title ?? "untitled", count: count, hash: hash ?? "vmlDWGV")
                                 let size = self.view.frame.size.width
                                 y = Int(y) + Int(size) + 200
                             } else {
@@ -136,7 +123,7 @@ class ThirdViewController: UIViewController {
         }
     }
     
-    func sendImageUrlToImageView(id: String, y: Int, width: Int, height: Int, title: String, count: Int) {
+    func sendImageUrlToImageView(id: String, y: Int, width: Int, height: Int, title: String, count: Int, hash: String) {
         let URL_IMAGE = URL(string: id)
         let session = URLSession(configuration: .default)
         let imageSize = self.view.frame.size.width
@@ -155,22 +142,36 @@ class ThirdViewController: UIViewController {
                         layerImage.fillColor = UIColor(red:0.00, green:0.11, blue:0.15, alpha:1.0).cgColor
                         self.view.layer.addSublayer(layerImage)
                         
-                        let textView = UILabel(frame: CGRect(x: 0.0, y: calc, width: 250.0, height: 100.0))
-                        textView.text = title
-                        textView.center = self.view.center
-                        textView.textAlignment = NSTextAlignment.justified
-                        textView.backgroundColor = UIColor(white: 1, alpha: 0)
-                        textView.center = CGPoint(x: Double(imageSize / 2), y: calc + 45)
-                        textView.textAlignment = NSTextAlignment.center;
-                        textView.textColor = UIColor(red:1, green:1, blue:1, alpha:1.0)
-                        textView.font = UIFont(name:"Kefa", size: 16.0)
+                        let textView1 = UILabel(frame: CGRect(x: 0.0, y: 200, width: 250.0, height: 100.0))
+                        textView1.text = title
+                        textView1.center = self.view.center
+                        textView1.textAlignment = NSTextAlignment.justified
+                        textView1.backgroundColor = UIColor(white: 1, alpha: 0)
+                        textView1.center = CGPoint(x: Double(imageSize / 2), y: calc + 45)
+                        textView1.textAlignment = NSTextAlignment.center;
+                        textView1.textColor = UIColor(red:1, green:1, blue:1, alpha:1.0)
+                        textView1.font = UIFont(name:"Kefa", size: 16.0)
                         
                         let image = UIImage(data: imageData)
                         let imageView1 = UIImageView(image: image)
                         imageView1.tag = count + 100
                         imageView1.frame = CGRect(x: Double(0), y: Double(y), width: Double(imageSize), height: Double(imageSize))
+                        
+                        let back = UIImage(named: "star") as UIImage?
+
+                        let button = UIButton(frame: CGRect(x: Double(300), y: Double(calc + 30), width: 30, height: 30))
+                        button.setImage(back, for: .normal)
+
+                        button.addTarget(self, action: #selector(self.favor), for: .touchUpInside)
+                        button.tag = count + 1000
+                        self.view.bringSubviewToFront(button)
+                        self.view.sendSubviewToBack(imageView1)
+
                         self.view.addSubview(imageView1)
-                        self.view.addSubview(textView)
+                        self.view.addSubview(textView1)
+                        self.view.addSubview(button)
+                        self.refHash[button.tag] = hash
+                        self.refFav[button.tag] = false
 
                     } else {
                         print("no image found")
@@ -181,6 +182,45 @@ class ThirdViewController: UIViewController {
             }
         }
         getImageFromUrl.resume()
+    }
+    
+    @IBAction func favor(sender: UIButton) {
+        let back: UIImage
+        if (self.refFav[sender.tag] == false) {
+            back = (UIImage(named: "fullStar") as UIImage?)!
+            self.refFav[sender.tag] = true
+        } else {
+            back = (UIImage(named: "star") as UIImage?)!
+            self.refFav[sender.tag] = false
+        }
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer \(EntryViewController.GlobalVariable.AccessToken)"
+        ]
+        print(self.refHash[sender.tag] ?? "Error")
+        favoriteImage(headers: headers, hash: self.refHash[sender.tag] ?? "vmlDWGV")
+        sender.setImage(back, for: .normal)
+        EntryViewController.GlobalVariable.NewFavorite = true
+    }
+    
+    func favoriteImage(headers: HTTPHeaders, hash: String) {
+        let URL:String = "https://api.imgur.com/3/image/\(hash)/favorite"
+//        Alamofire.request(URL, method: .get, headers: headers).responseJSON {_ in
+//        }
+        Alamofire.request(URL, method: .post, headers: headers).responseJSON { response in
+            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
+                if let dataFromString = utf8Text.data(using: .utf8, allowLossyConversion: false) {
+                    do {
+                        let json = try JSON(data: dataFromString)
+                        print("Fmo")
+                        print(json)
+                        print("Flo")
+                    } catch {
+                        print(error)
+                        return
+                    }
+                }
+            }
+        }
     }
     
     func avatarDisplay(MY_URL: String, headers: HTTPHeaders) {
