@@ -194,7 +194,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
-				ORGANIZATIONNAME = Flo;
+				ORGANIZATIONNAME = sifdine;
 				TargetAttributes = {
 					5CA994B02190680F00A4ED2F = {
 						CreatedOnToolsVersion = 10.1;
@@ -465,13 +465,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4WQZALU6UF;
+				DEVELOPMENT_TEAM = 2AQY89SQQX;
 				INFOPLIST_FILE = Epicture_Epitech/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.flo.Epicture-Epitech";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sifdine.Epicture-Epitech";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Epicture_Epitech/Epicture_Epitech-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
@@ -485,13 +485,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4WQZALU6UF;
+				DEVELOPMENT_TEAM = 2AQY89SQQX;
 				INFOPLIST_FILE = Epicture_Epitech/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.flo.Epicture-Epitech";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sifdine.Epicture-Epitech";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Epicture_Epitech/Epicture_Epitech-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
